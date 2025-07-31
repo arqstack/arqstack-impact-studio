@@ -70,14 +70,18 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
-				'gradient-hero': 'var(--gradient-hero)'
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-animated': 'var(--gradient-animated)'
 			},
 			boxShadow: {
 				'soft': 'var(--shadow-soft)',
-				'glow': 'var(--shadow-glow)'
+				'glow': 'var(--shadow-glow)',
+				'hover': 'var(--shadow-hover)',
+				'card': 'var(--shadow-card)'
 			},
 			transitionTimingFunction: {
-				'smooth': 'var(--transition-smooth)'
+				'smooth': 'var(--transition-smooth)',
+				'bounce': 'var(--transition-bounce)'
 			},
 			keyframes: {
 				'accordion-down': {
@@ -115,13 +119,83 @@ export default {
 						opacity: '1',
 						transform: 'translateX(0)'
 					}
+				},
+				'slide-up': {
+					from: {
+						opacity: '0',
+						transform: 'translateY(30px)'
+					},
+					to: {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'bounce-in': {
+					'0%': {
+						transform: 'scale(0)',
+						opacity: '0'
+					},
+					'50%': {
+						transform: 'scale(1.1)',
+						opacity: '0.8'
+					},
+					'100%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'gradient-shift': {
+					'0%': {
+						backgroundPosition: '0% 50%'
+					},
+					'50%': {
+						backgroundPosition: '100% 50%'
+					},
+					'100%': {
+						backgroundPosition: '0% 50%'
+					}
+				},
+				'pulse-glow': {
+					'0%, 100%': {
+						opacity: '1',
+						transform: 'scale(1)'
+					},
+					'50%': {
+						opacity: '0.8',
+						transform: 'scale(1.05)'
+					}
+				},
+				'shake': {
+					'0%, 100%': {
+						transform: 'translateX(0)'
+					},
+					'10%, 30%, 50%, 70%, 90%': {
+						transform: 'translateX(-2px)'
+					},
+					'20%, 40%, 60%, 80%': {
+						transform: 'translateX(2px)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.6s ease-out',
-				'slide-in': 'slide-in 0.6s ease-out'
+				'slide-in': 'slide-in 0.6s ease-out',
+				'slide-up': 'slide-up 0.6s ease-out',
+				'bounce-in': 'bounce-in 0.6s ease-out',
+				'float': 'float 3s ease-in-out infinite',
+				'gradient-shift': 'gradient-shift 4s ease-in-out infinite',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'shake': 'shake 0.5s ease-in-out'
 			}
 		}
 	},
